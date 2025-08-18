@@ -4,43 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paginação</title>
-
     
-    <link rel="stylesheet" href="../css/style.css" >
+    <!-- Font Awesome 6 (versão gratuita) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/styleSimulador.css" >
 </head>
 <body>
     <div class="container">
-        <div class="menu">
+        <header class="top-menu">
+            <div class="menu-container">
+                <div class="logoUPF">
+                    <img src="../imgs/logo-color-vertical.png" alt="UPF">
+                    <h3>Universidade de Passo Fundo</h3>
+                </div>
 
-            <div class="logoUPF">
-                <img src="../imgs/logo-color-vertical.png" alt="UPF">
+                <nav class="navigation">
+                    <div class="nav-item">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <a href="alocacao-contigua.html" class="nav-link">Alocação Contígua</a>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <a href="paginacao.html" class="nav-link">Paginação</a>
+                    </div>
+                </nav>
+        
             </div>
-
-             <nav class="navigation">
-                 <div class="nav-item">
-                    <a href="../index.html" class="nav-link">Home</a>
-                </div>
-                
-                <div class="nav-item">
-                    <a href="alocacao-contigua.html" class="nav-link">Alocação Contígua</a>
-                </div>
-                
-                <div class="nav-item">
-                    <a href="paginacao.html" class="nav-link">Paginação</a>
-                </div>
-            </nav>
-
-            <div class="footer">
-                <p>Desenvolvido por:</p>
-                <p>Rafael Maurina</p>
-                <p>João Vitor Althaus</p>
-            </div>
-           
-        </div>
+        </header>
     
         <div class="conteudo">
-             <h1>Paginação</h1>
-                <p>Funcionamento do Algoritmo com criação de processos.</p>
+            
+            <div class="painel-lateral">
+                <div class="titulo-simulador">
+                    <h1>Paginação</h1>
+                    
+                </div>
+                <div class="card-processo">
+                    <div class="card-header">
+                        <i class="fas fa-plus-circle"></i>
+                        <h2>Adicionar Processo</h2>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="nome-processo">Nome do Processo</label>
+                            <input type="text" id="nome-processo" maxlength="3" placeholder="Ex: P1">
+                            <small class="form-hint">Máx. 3 caracteres</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tamanho-processo">Tamanho (KB)</label>
+                            <input type="number" id="tamanho-processo" min="1" max="32" placeholder="1-32 KB">
+                        </div>
+
+                       
+                        
+                        <button class="btn btn-primary" id="btn-adicionar">
+                            <i class="fas fa-plus"></i> Adicionar Processo
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Card de Processos Ativos -->
+                <div class="card-processos">
+                    <div class="card-header">
+                        <i class="fas fa-tasks"></i>
+                        <h2>Processos Ativos</h2>
+                        <button class="btn btn-icon" id="btn-remover-todos" title="Remover todos">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="lista-processos" id="lista-processos">
+                            <div class="lista-vazia">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Nenhum processo ativo</p>
+                            </div>
+                        </div>
+                        
+                        <div class="processo-info">
+                            <div class="info-item">
+                                <span>Total:</span>
+                                <span id="total-processos">0</span>
+                            </div>
+                            <div class="info-item">
+                                <span>Memória:</span>
+                                <span id="memoria-utilizada">0 KB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="memoria-fisica">
+            </div>
+
+            
         </div>
     </div>
 </body>

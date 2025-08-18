@@ -5,43 +5,294 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alocação Contígua</title>
 
+    <!-- Font Awesome 6 (versão gratuita) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="stylesheet" href="../css/style.css" >
+    <link rel="stylesheet" href="../css/styleSimulador.css" >
 </head>
 <body>
     <div class="container">
-        <div class="menu">
 
-            <div class="logoUPF">
-                <img src="../imgs/logo-color-vertical.png" alt="UPF">
-            </div>
-
-             <nav class="navigation">
-                 <div class="nav-item">
-                    <a href="../index.html" class="nav-link">Home</a>
+        <header class="top-menu">
+            <div class="menu-container">
+                <div class="logoUPF">
+                    <img src="../imgs/logo-color-vertical.png" alt="UPF">
+                    <h3>Universidade de Passo Fundo</h3>
                 </div>
                 
-                <div class="nav-item">
-                    <a href="alocacao-contigua.html" class="nav-link">Alocação Contígua</a>
-                </div>
-                
-                <div class="nav-item">
-                    <a href="paginacao.html" class="nav-link">Paginação</a>
-                </div>
-            </nav>
-
-            <div class="footer">
-                <p>Desenvolvido por:</p>
-                <p>Rafael Maurina</p>
-                <p>João Vitor Althaus</p>
+                <nav class="navigation">
+                    <div class="nav-item">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <a href="alocacao-contigua.html" class="nav-link">Alocação Contígua</a>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <a href="paginacao.html" class="nav-link">Paginação</a>
+                    </div>
+                </nav>
             </div>
-           
-        </div>
-    
+        </header>
+        
         <div class="conteudo">
-             <h1>Alocação Contígua</h1>
-                <p>Funcionamento do Algoritmo com criação de processos.</p>
-        </div>
+            
+            <div class="painel-lateral">
+                <div class="titulo-simulador">    
+                    <h1>Alocação Contígua</h1>
+                </div>
+
+                <!------- Adicionar Processo --------->
+                <div class="card-processo">
+                    <div class="card-header">
+                        <i class="fas fa-plus-circle"></i>
+                        <h2>Adicionar Processo</h2>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="nome-processo">Nome do Processo</label>
+                            <input type="text" id="nome-processo" maxlength="3" placeholder="Ex: P1">
+                            <small class="form-hint">Máx. 3 caracteres</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tamanho-processo">Tamanho (KB)</label>
+                            <input type="number" id="tamanho-processo" min="1" max="32" placeholder="1-32 KB">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="algoritmo">Algoritmo de Alocação</label>
+                            <select id="algoritmo" class="form-select">
+                                <option value="" disabled selected>Selecione...</option>
+                                <option value="first-fit">First-Fit</option>
+                                <option value="best-fit">Best-Fit</option>
+                                <option value="worst-fit">Worst-Fit</option>
+                                <option value="circular-fit">Circular-Fit</option>
+                            </select>
+                        </div>
+                        
+                        <button class="btn btn-primary" id="btn-adicionar">
+                            <i class="fas fa-plus"></i> Adicionar Processo
+                        </button>
+                    </div>
+                </div>
+            
+            <!-- Card de Processos Ativos -->
+                <div class="card-processos">
+                    <div class="card-header">
+                        <i class="fas fa-tasks"></i>
+                        <h2>Processos Ativos</h2>
+                        <button class="btn btn-icon" id="btn-remover-todos" title="Remover todos">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    
+                    </div>
+                
+                    <div class="card-body-lista">
+                            <div class="lista-processos" id="lista-processos">
+                                <div class="lista-vazia">
+                                    <i class="fas fa-info-circle"></i>
+                                    <p>Nenhum processo ativo</p>
+                                </div>
+                            </div>
+                            
+                            <div class="processo-info">
+                                <div class="info-item">
+                                    <span>Nº de Processos:</span>
+                                    <span id="total-processos">0</span>
+                                </div>
+                                <div class="info-item">
+                                    <span>Memória:</span>
+                                    <span id="memoria-utilizada">0 KB</span>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="memoria-fisica">
+                <div class="titulo-memoria">
+                    <h1>Memória Física (32KB)</h1>
+                </div>
+
+               <div class="memoria-grid">
+                    <div class="endereco-card celula-livre" data-endereco="0">
+                        <div class="endereco-header">Endereço 0</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="1">
+                        <div class="endereco-header">Endereço 1</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="2">
+                        <div class="endereco-header">Endereço 2</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="3">
+                        <div class="endereco-header">Endereço 3</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="4">
+                        <div class="endereco-header">Endereço 4</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="5">
+                        <div class="endereco-header">Endereço 5</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="6">
+                        <div class="endereco-header">Endereço 6</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="7">
+                        <div class="endereco-header">Endereço 7</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="8">
+                        <div class="endereco-header">Endereço 8</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="9">
+                        <div class="endereco-header">Endereço 9</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="10">
+                        <div class="endereco-header">Endereço 10</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="11">
+                        <div class="endereco-header">Endereço 11</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="12">
+                        <div class="endereco-header">Endereço 12</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="13">
+                        <div class="endereco-header">Endereço 13</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="14">
+                        <div class="endereco-header">Endereço 14</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="15">
+                        <div class="endereco-header">Endereço 15</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="16">
+                        <div class="endereco-header">Endereço 16</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="17">
+                        <div class="endereco-header">Endereço 17</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="18">
+                        <div class="endereco-header">Endereço 18</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="19">
+                        <div class="endereco-header">Endereço 19</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="20">
+                        <div class="endereco-header">Endereço 20</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="21">
+                        <div class="endereco-header">Endereço 21</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="22">
+                        <div class="endereco-header">Endereço 22</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="23">
+                        <div class="endereco-header">Endereço 23</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="24">
+                        <div class="endereco-header">Endereço 24</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="25">
+                        <div class="endereco-header">Endereço 25</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="26">
+                        <div class="endereco-header">Endereço 26</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="27">
+                        <div class="endereco-header">Endereço 27</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="28">
+                        <div class="endereco-header">Endereço 28</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="29">
+                        <div class="endereco-header">Endereço 29</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="30">
+                        <div class="endereco-header">Endereço 30</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+
+                    <div class="endereco-card celula-livre" data-endereco="31">
+                        <div class="endereco-header">Endereço 31</div>
+                        <div class="endereco-content">LIVRE</div>
+                    </div>
+                    </div>
+
+
+                <div class="legenda-memoria">
+                    <div class="legenda-item">
+                        <div class="legenda-cor legenda-livre"></div>
+                        <span>Memória Livre</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-cor legenda-ocupada"></div>
+                        <span>Memória Ocupada</span>
+                    </div>
+                </div>
+            </div>
     </div>
+
+    <script type="module" src="../javascript/Alocacao/controler/controller.js"></script>
 </body>
 </html>

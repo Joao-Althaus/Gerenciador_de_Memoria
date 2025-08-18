@@ -1,0 +1,809 @@
+/* Reset e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+
+
+
+
+
+
+/* ============================================= */
+/*                  Menu Superior                */
+/* ============================================= */
+.top-menu {
+    background-color: #2c3e50;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.menu-container h3{
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.logoUPF {
+    display: flex;
+    align-items: flex-end;
+}
+
+.logoUPF img {
+    width: auto;
+    height: 60px;
+    max-width: 100%;
+    color: #ecf0f1;
+}
+
+.navigation {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.nav-link.active {
+    background-color: #3498db;
+    color: white;
+}
+
+
+
+
+
+
+
+/* ============================================= */
+/*                 Conteudo Principal            */
+/* ============================================= */
+.conteudo {
+    flex: 1;
+    background-color: #f1f3f5;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    /* justify-content: flex-start; */
+}
+
+.content-wrapper {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+.conteudo p {
+    color: #34495e;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .navigation {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .footer {
+        text-align: center;
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 0;
+    }
+    
+    .conteudo {
+        padding: 15px;
+    }
+    
+    .content-wrapper {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    
+    .logoUPF img {
+        height: 50px;
+    }
+    
+    .footer {
+        font-size: 11px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* ============================================= */
+/* PAINEL LATERAL - ESTILOS PRINCIPAIS */
+/* ============================================= */
+
+.painel-lateral {
+    width: 320px;
+    min-width: 320px;
+    background-color: #f8f9fa;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.titulo-simulador{
+    display: flex;
+    justify-content: center;
+}
+
+/* ============================================= */
+/*              CARDS - ESTRUTURA BASE           */
+/* ============================================= */
+
+.card-processo,
+.card-processos {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-processo:hover,
+.card-processos:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Cabeçalho dos Cards */
+.card-header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.card-header h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.card-header i {
+    font-size: 1.1rem;
+}
+
+/* Corpo dos Cards */
+.card-body {
+    padding: 1.2rem;
+}
+.card-body-lista {
+    padding: 0.7rem;
+}
+
+/* ============================================= */
+/*          FORMULÁRIO - ADICIONAR PROCESSO      */
+/* ============================================= */
+
+.form-group {
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    color: #34495e;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-select {
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+.form-hint {
+    color: #95a5a6;
+    font-size: 0.75rem;
+    display: block;
+    margin-top: 0.3rem;
+    font-style: italic;
+}
+
+/* Estilo específico para o select */
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1rem;
+    padding-right: 2rem;
+}
+
+/* ============================================= */
+/*                  BOTÕES                       */
+/* ============================================= */
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    background: none;
+    color: #bdc3c7;
+    padding: 0.4rem;
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.btn-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ecf0f1;
+}
+
+/* ============================================= */
+/*              LISTA DE PROCESSOS               */
+/* ============================================= */
+
+.lista-processos {
+    max-height: 230px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #bdc3c7 #f1f3f5;
+}
+
+/* Estilizando a scrollbar (para navegadores WebKit) */
+.lista-processos::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lista-processos::-webkit-scrollbar-track {
+    background: #f1f3f5;
+    border-radius: 3px;
+}
+
+.lista-processos::-webkit-scrollbar-thumb {
+    background-color: #bdc3c7;
+    border-radius: 3px;
+}
+
+.lista-vazia {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    color: #95a5a6;
+}
+
+.lista-vazia i {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: #dfe6e9;
+    opacity: 0.7;
+}
+
+.lista-vazia p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ============================================= */
+/* INFORMAÇÕES DE PROCESSOS */
+/* ============================================= */
+
+.processo-info {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding-top: 0.9rem;
+    font-size: 0.85rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.info-item span:first-child {
+    color: #7f8c8d;
+}
+
+.info-item span:last-child {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+/* ============================================= */
+/* PROCESSOS DINÂMICOS - GERADOS PELO JAVASCRIPT */
+/* ============================================= */
+
+#lista-processos {
+    max-height: 230px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #bdc3c7 #f1f3f5;
+}
+
+/* Barra de rolagem - mantendo seu estilo original */
+#lista-processos::-webkit-scrollbar {
+    width: 6px;
+}
+
+#lista-processos::-webkit-scrollbar-track {
+    background: #f1f3f5;
+    border-radius: 3px;
+}
+
+#lista-processos::-webkit-scrollbar-thumb {
+    background-color: #bdc3c7;
+    border-radius: 3px;
+}
+
+/* Item de processo - estilo específico para os gerados pelo JS */
+.processo-item {
+    display: grid;
+    grid-template-columns: 30px 45px 80px 20px; 
+    gap: 1rem;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.processo-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilos para os elementos dentro do processo-item */
+.processo-item span:first-child {
+    font-weight: 500;
+    color: #2c3e50;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.processo-item span:nth-child(2) {
+    text-align: right;
+    color: #3498db;
+    font-weight: 500;
+}
+
+.processo-item span:nth-child(3) {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    background-color: #f1f3f5;
+    padding: 0.3rem 0.5rem;
+    border-radius: 12px;
+}
+
+/* Botão de remover - corrigindo a exibição */
+.processo-item button.btn-remover {
+    background: transparent;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    margin-left: auto; /* Garante que fique à direita */
+}
+
+.processo-item button.btn-remover:hover {
+    background-color: #fadbd8;
+    transform: scale(1.1);
+}
+
+.processo-item button.btn-remover i {
+    font-size: 0.9rem;
+}
+
+/* ============================================= */
+/* RESPONSIVIDADE */
+/* ============================================= */
+
+@media (max-width: 768px) {
+    .processo-item {
+        grid-template-columns: 1fr 80px 40px;
+        grid-template-areas: 
+            "nome nome btn"
+            "tamanho algoritmo btn";
+    }
+    
+    .processo-item span:first-child {
+        grid-area: nome;
+    }
+    
+    .processo-item span:nth-child(2) {
+        grid-area: tamanho;
+        text-align: left;
+    }
+    
+    .processo-item span:nth-child(3) {
+        grid-area: algoritmo;
+        justify-self: start;
+    }
+    
+    .processo-item button.btn-remover {
+        grid-area: btn;
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .processo-item {
+        gap: 0.5rem;
+        padding: 0.6rem;
+    }
+    
+    .processo-item span:nth-child(3) {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.3rem;
+    }
+}
+
+
+/* ============================================= */
+/*          RESPONSIVIDADE PAINEL LATERAL        */
+/* ============================================= */
+
+@media (max-width: 1024px) {
+    .painel-lateral {
+        width: 280px;
+        min-width: 280px;
+        padding: 1.2rem 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .painel-lateral {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 1rem;
+        height: auto;
+    }
+    
+    .card-header {
+        padding: 0.7rem 1rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-group input,
+    .form-select {
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================= */
+/* MEMÓRIA FÍSICA - CARDS DE ENDEREÇOS FIXOS */
+/* ============================================= */
+
+.memoria-fisica {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-memoria {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    /* border-bottom: 2px solid #3498db; */
+}
+
+.titulo-memoria h1 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.memoria-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0.8rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+
+/* ============================================= */
+/*          Cards de Endereco da Memoria         */
+/* ============================================= */
+.endereco-card {
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.endereco-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.endereco-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+/* Cores dos estados */
+.celula-livre .endereco-content {
+    background-color: #e8f8f5;
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+    border-top: none;
+}
+
+.celula-ocupada .endereco-content {
+    background-color: #fadbd8;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+    border-top: none;
+}
+
+/* Efeitos de hover */
+.endereco-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+/* Tooltip personalizado */
+.endereco-card:hover::after {
+    content: attr(data-endereco);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c3e50;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+/* ============================================= */
+/* LEGENDA */
+/* ============================================= */
+
+.legenda-memoria {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.legenda-cor {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+.legenda-livre {
+    background-color: #e8f8f5;
+    border: 1px solid #2ecc71;
+}
+
+.legenda-ocupada {
+    background-color: #fadbd8;
+    border: 1px solid #e74c3c;
+}
+
+/* ============================================= */
+/* RESPONSIVIDADE */
+/* ============================================= */
+
+@media (max-width: 1024px) {
+    .memoria-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .memoria-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+    
+    .endereco-header {
+        font-size: 0.75rem;
+        padding: 0.4rem;
+    }
+    
+    .endereco-content {
+        font-size: 0.85rem;
+        padding: 0.8rem 0.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .memoria-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 0.8rem;
+    }
+    
+    .endereco-header {
+        font-size: 0.7rem;
+    }
+    
+    .endereco-content {
+        font-size: 0.8rem;
+        height: 35px;
+    }
+    
+    .legenda-memoria {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
