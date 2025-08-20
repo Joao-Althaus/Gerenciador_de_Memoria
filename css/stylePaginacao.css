@@ -1,0 +1,1207 @@
+/* Reset e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+
+
+
+
+
+
+/* ============================================= */
+/*                  Menu Superior                */
+/* ============================================= */
+.top-menu {
+    background-color: #2c3e50;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.menu-container h3{
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.logoUPF {
+    display: flex;
+    align-items: flex-end;
+}
+
+.logoUPF img {
+    width: auto;
+    height: 60px;
+    max-width: 100%;
+    color: #ecf0f1;
+}
+
+.navigation {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.nav-link.active {
+    background-color: #3498db;
+    color: white;
+}
+
+
+
+
+
+
+
+/* ============================================= */
+/*                 Conteudo Principal            */
+/* ============================================= */
+.conteudo {
+    flex: 1;
+    background-color: #f1f3f5;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    /* justify-content: flex-start; */
+}
+
+.content-wrapper {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+.conteudo p {
+    color: #34495e;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .navigation {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .footer {
+        text-align: center;
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 0;
+    }
+    
+    .conteudo {
+        padding: 15px;
+    }
+    
+    .content-wrapper {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    
+    .logoUPF img {
+        height: 50px;
+    }
+    
+    .footer {
+        font-size: 11px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================= */
+/* PAINEL LATERAL - ESTILOS PRINCIPAIS */
+/* ============================================= */
+
+.painel-lateral {
+    width: 320px;
+    min-width: 320px;
+    background-color: #f8f9fa;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.titulo-simulador{
+    display: flex;
+    justify-content: center;
+}
+
+/* ============================================= */
+/*              CARDS - ESTRUTURA BASE           */
+/* ============================================= */
+
+.card-processo,
+.card-processos {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-processo:hover,
+.card-processos:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Cabeçalho dos Cards */
+.card-header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.card-header h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.card-header i {
+    font-size: 1.1rem;
+}
+
+/* Corpo dos Cards */
+.card-body {
+    padding: 1.2rem;
+}
+.card-body-lista {
+    padding: 0.7rem;
+}
+
+/* ============================================= */
+/*          FORMULÁRIO - ADICIONAR PROCESSO      */
+/* ============================================= */
+
+.form-group {
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    color: #34495e;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-select {
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+.form-hint {
+    color: #95a5a6;
+    font-size: 0.75rem;
+    display: block;
+    margin-top: 0.3rem;
+    font-style: italic;
+}
+
+/* Estilo específico para o select */
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1rem;
+    padding-right: 2rem;
+}
+
+/* ============================================= */
+/*                  BOTÕES                       */
+/* ============================================= */
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    background: none;
+    color: #bdc3c7;
+    padding: 0.4rem;
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.btn-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ecf0f1;
+}
+
+/* ============================================= */
+/*              LISTA DE PROCESSOS               */
+/* ============================================= */
+
+.lista-processos {
+    max-height: 230px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #bdc3c7 #f1f3f5;
+}
+
+/* Estilizando a scrollbar (para navegadores WebKit) */
+.lista-processos::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lista-processos::-webkit-scrollbar-track {
+    background: #f1f3f5;
+    border-radius: 3px;
+}
+
+.lista-processos::-webkit-scrollbar-thumb {
+    background-color: #bdc3c7;
+    border-radius: 3px;
+}
+
+.lista-vazia {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    color: #95a5a6;
+}
+
+.lista-vazia i {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: #dfe6e9;
+    opacity: 0.7;
+}
+
+.lista-vazia p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ============================================= */
+/* INFORMAÇÕES DE PROCESSOS */
+/* ============================================= */
+
+.processo-info {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding-top: 0.9rem;
+    font-size: 0.85rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.info-item span:first-child {
+    color: #7f8c8d;
+}
+
+.info-item span:last-child {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+/* ============================================= */
+/* PROCESSOS DINÂMICOS - GERADOS PELO JAVASCRIPT */
+/* ============================================= */
+
+#lista-processos {
+    max-height: 230px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #bdc3c7 #f1f3f5;
+}
+
+/* Barra de rolagem - mantendo seu estilo original */
+#lista-processos::-webkit-scrollbar {
+    width: 6px;
+}
+
+#lista-processos::-webkit-scrollbar-track {
+    background: #f1f3f5;
+    border-radius: 3px;
+}
+
+#lista-processos::-webkit-scrollbar-thumb {
+    background-color: #bdc3c7;
+    border-radius: 3px;
+}
+
+/* Item de processo - estilo específico para os gerados pelo JS */
+.processo-item {
+    display: grid;
+    grid-template-columns: 30px 45px 80px 20px; 
+    gap: 1rem;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.processo-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilos para os elementos dentro do processo-item */
+.processo-item span:first-child {
+    font-weight: 500;
+    color: #2c3e50;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.processo-item span:nth-child(2) {
+    text-align: right;
+    color: #3498db;
+    font-weight: 500;
+}
+
+.processo-item span:nth-child(3) {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    background-color: #f1f3f5;
+    padding: 0.3rem 0.5rem;
+    border-radius: 12px;
+}
+
+/* Botão de remover - corrigindo a exibição */
+.processo-item button.btn-remover {
+    background: transparent;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    margin-left: auto; /* Garante que fique à direita */
+}
+
+.processo-item button.btn-remover:hover {
+    background-color: #fadbd8;
+    transform: scale(1.1);
+}
+
+.processo-item button.btn-remover i {
+    font-size: 0.9rem;
+}
+
+/* ============================================= */
+/* RESPONSIVIDADE */
+/* ============================================= */
+
+@media (max-width: 768px) {
+    .processo-item {
+        grid-template-columns: 1fr 80px 40px;
+        grid-template-areas: 
+            "nome nome btn"
+            "tamanho algoritmo btn";
+    }
+    
+    .processo-item span:first-child {
+        grid-area: nome;
+    }
+    
+    .processo-item span:nth-child(2) {
+        grid-area: tamanho;
+        text-align: left;
+    }
+    
+    .processo-item span:nth-child(3) {
+        grid-area: algoritmo;
+        justify-self: start;
+    }
+    
+    .processo-item button.btn-remover {
+        grid-area: btn;
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .processo-item {
+        gap: 0.5rem;
+        padding: 0.6rem;
+    }
+    
+    .processo-item span:nth-child(3) {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.3rem;
+    }
+}
+
+
+/* ============================================= */
+/*          RESPONSIVIDADE PAINEL LATERAL        */
+/* ============================================= */
+
+@media (max-width: 1024px) {
+    .painel-lateral {
+        width: 280px;
+        min-width: 280px;
+        padding: 1.2rem 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .painel-lateral {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 1rem;
+        height: auto;
+    }
+    
+    .card-header {
+        padding: 0.7rem 1rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-group input,
+    .form-select {
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================= */
+/*            Visualizador da Simulacao          */
+/* ============================================= */
+/* ============================================= */
+/* VISUALIZADOR DE PAGINAÇÃO - ESTILO COMPLETO */
+/* ============================================= */
+
+.visualizador {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    min-height: 600px;
+    margin: 10px;
+    flex: 1;
+    border-radius: 8px;
+}
+
+/* ============================================= */
+/*          ESPAÇO LÓGICA - PROCESSOS            */
+/* ============================================= */
+
+.espaco-logica {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.titulo-logica {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.titulo-logica h3 {
+    color: #2c3e50;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Container de cada processo */
+.proc-A, .proc-B, .proc-C, .proc-D, .proc-E {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nome-processo {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    
+}
+
+.nome-processo h4 {
+    color: #2c3e50;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+/* ============================================= */
+/*          MEMÓRIA LÓGICA - ESTILO COMPACTO     */
+/* ============================================= */
+
+.mem-logica {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 0.6rem;
+    border: 1px solid #dee2e6;
+    height: auto;
+    overflow: visible;
+}
+
+.mem-logica table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    table-layout: fixed;
+}
+
+.mem-logica th, .mem-logica td {
+    padding: 0.15rem;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    height: 18px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mem-logica thead tr {
+    background-color: #3498db; /* Azul mantido para memória lógica */
+    color: white;
+}
+
+.mem-logica tbody tr:nth-child(even) {
+    background-color: #f1f3f5;
+}
+
+.mem-logica tbody tr:hover {
+    background-color: #e8f4fc;
+}
+
+/* Remove todas as barras de scroll */
+.mem-logica tbody {
+    overflow: visible;
+    display: table-row-group;
+    max-height: none;
+}
+
+.mem-logica tr {
+    display: table-row;
+}
+
+/* Ajuste específico para limitar linhas se necessário */
+.mem-logica tbody tr:nth-child(n+17) {
+    display: none;
+}
+
+/* Cores para diferentes processos - Memória Lógica */
+.mem-logica td:nth-child(3):not(:empty) {
+    font-weight: 600;
+}
+
+.mem-logica td:nth-child(3):contains("A") {
+    color: #2980b9;
+    background-color: #e8f4fc;
+}
+
+.mem-logica td:nth-child(3):contains("B") {
+    color: #c0392b;
+    background-color: #fadbd8;
+}
+
+.mem-logica td:nth-child(3):contains("C") {
+    color: #27ae60;
+    background-color: #e8f8f5;
+}
+
+.mem-logica td:nth-child(3):contains("D") {
+    color: #8e44ad;
+    background-color: #f4ecf7;
+}
+
+.mem-logica td:nth-child(3):contains("E") {
+    color: #d35400;
+    background-color: #fef9e7;
+}
+
+/* ============================================= */
+/* RESPONSIVIDADE PARA MEMÓRIA LÓGICA */
+/* ============================================= */
+
+@media (max-width: 768px) {
+    .mem-logica {
+        padding: 0.5rem;
+    }
+    
+    .mem-logica table {
+        font-size: 0.6rem;
+    }
+    
+    .mem-logica th, .mem-logica td {
+        padding: 0.1rem;
+        height: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mem-logica table {
+        font-size: 0.55rem;
+    }
+    
+    .mem-logica th, .mem-logica td {
+        padding: 0.08rem;
+        height: 14px;
+    }
+}
+
+
+
+
+
+/* ============================================= */
+/*          TABELA DE PÁGINAS - ESTILO COMPACTO */
+/* ============================================= */
+
+.tabela-de-paginas {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 0.6rem;
+    border: 1px solid #dee2e6;
+    height: auto;
+    overflow: visible;
+    margin-top: 0.5rem;
+}
+
+.tabela-de-paginas table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    table-layout: fixed;
+}
+
+.tabela-de-paginas th, .tabela-de-paginas td {
+    padding: 0.15rem;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    height: 18px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tabela-de-paginas thead tr {
+    background-color: #e74c3c; /* Vermelho mantido para tabela de páginas */
+    color: white;
+}
+
+.tabela-de-paginas tbody tr:nth-child(even) {
+    background-color: #f1f3f5;
+}
+
+.tabela-de-paginas tbody tr:hover {
+    background-color: #fadbd8;
+}
+
+/* Remove todas as barras de scroll */
+.tabela-de-paginas tbody {
+    overflow: visible;
+    display: table-row-group;
+    max-height: none;
+}
+
+.tabela-de-paginas tr {
+    display: table-row;
+}
+
+/* Ajuste específico para limitar linhas se necessário */
+.tabela-de-paginas tbody tr:nth-child(n+9) {
+    display: none;
+}
+
+/* ============================================= */
+/* LAYOUT PARA POSICIONAMENTO CORRETO */
+/* ============================================= */
+
+.proc-A, .proc-B, .proc-C, .proc-D, .proc-E {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Reduzido para ficar mais compacto */
+}
+
+.mem-logica {
+    margin-bottom: 0; /* Remove margem inferior para ficar colado */
+}
+
+.tabela-de-paginas {
+    margin-top: 0.5rem; /* Pequeno espaçamento entre as tabelas */
+}
+
+/* ============================================= */
+/* RESPONSIVIDADE PARA TABELA DE PÁGINAS */
+/* ============================================= */
+
+@media (max-width: 768px) {
+    .tabela-de-paginas {
+        padding: 0.5rem;
+    }
+    
+    .tabela-de-paginas table {
+        font-size: 0.6rem;
+    }
+    
+    .tabela-de-paginas th, .tabela-de-paginas td {
+        padding: 0.1rem;
+        height: 16px;
+    }
+    
+    .proc-A, .proc-B, .proc-C, .proc-D, .proc-E {
+        gap: 0.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .tabela-de-paginas table {
+        font-size: 0.55rem;
+    }
+    
+    .tabela-de-paginas th, .tabela-de-paginas td {
+        padding: 0.08rem;
+        height: 14px;
+    }
+    
+    .tabela-de-paginas {
+        margin-top: 0.3rem;
+    }
+    
+    .proc-A, .proc-B, .proc-C, .proc-D, .proc-E {
+        gap: 0.3rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================= */
+/* ESPAÇO FÍSICO - MEMÓRIA FÍSICA (SEM SCROLL) */
+/* ============================================= */
+
+.espaco-fisico {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    min-height: 520px;
+}
+
+.titulo-fisica {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e74c3c;
+    flex-shrink: 0;
+}
+
+.titulo-fisica h3 {
+    color: #2c3e50;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.memoria-fisica {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    height: auto;
+}
+
+/* Tabelas da Memória Física - Ultra Compactas */
+.tabela1, .tabela2 {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 0.6rem;
+    border: 1px solid #dee2e6;
+    height: auto;
+    overflow: visible;
+}
+
+.tabela1 table, .tabela2 table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Courier New', monospace;
+    font-size: 0.65rem;
+    table-layout: fixed;
+}
+
+.tabela1 th, .tabela1 td, .tabela2 th, .tabela2 td {
+    padding: 0.15rem;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    height: 18px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tabela1 thead tr, .tabela2 thead tr {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.tabela1 tbody tr:nth-child(even), .tabela2 tbody tr:nth-child(even) {
+    background-color: #f1f3f5;
+}
+
+.tabela1 tbody tr:hover, .tabela2 tbody tr:hover {
+    background-color: #e8f4fc;
+}
+
+/* Remove todas as barras de scroll */
+.tabela1 tbody, .tabela2 tbody {
+    overflow: visible;
+    display: table-row-group;
+    max-height: none;
+}
+
+.tabela1 tr, .tabela2 tr {
+    display: table-row;
+}
+
+/* Ajuste específico para exibir 16 linhas */
+.tabela1 tbody tr:nth-child(n+17),
+.tabela2 tbody tr:nth-child(n+17) {
+    display: none;
+}
+
+/* Cores para diferentes processos - versão compacta */
+.tabela1 td:nth-child(3):not(:empty),
+.tabela2 td:nth-child(3):not(:empty) {
+    font-weight: 600;
+    padding: 0.1rem;
+}
+
+.tabela1 td:nth-child(3):contains("A"),
+.tabela2 td:nth-child(3):contains("A") {
+    color: #2980b9;
+    background-color: #e8f4fc;
+}
+
+.tabela1 td:nth-child(3):contains("B"),
+.tabela2 td:nth-child(3):contains("B") {
+    color: #c0392b;
+    background-color: #fadbd8;
+}
+
+.tabela1 td:nth-child(3):contains("C"),
+.tabela2 td:nth-child(3):contains("C") {
+    color: #27ae60;
+    background-color: #e8f8f5;
+}
+
+.tabela1 td:nth-child(3):contains("D"),
+.tabela2 td:nth-child(3):contains("D") {
+    color: #8e44ad;
+    background-color: #f4ecf7;
+}
+
+.tabela1 td:nth-child(3):contains("E"),
+.tabela2 td:nth-child(3):contains("E") {
+    color: #d35400;
+    background-color: #fef9e7;
+}
+
+/* ============================================= */
+/* RESPONSIVIDADE PARA ESPAÇO FÍSICO SEM SCROLL */
+/* ============================================= */
+
+@media (max-width: 1200px) {
+    .memoria-fisica {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .espaco-fisico {
+        min-height: 1040px;
+    }
+}
+
+@media (max-width: 768px) {
+    .espaco-fisico {
+        padding: 0.8rem;
+        min-height: 480px;
+    }
+    
+    .tabela1 table, .tabela2 table {
+        font-size: 0.6rem;
+    }
+    
+    .tabela1 th, .tabela1 td, .tabela2 th, .tabela2 td {
+        padding: 0.1rem;
+        height: 16px;
+    }
+    
+    .tabela1, .tabela2 {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .espaco-fisico {
+        min-height: 440px;
+    }
+    
+    .tabela1 table, .tabela2 table {
+        font-size: 0.55rem;
+    }
+    
+    .tabela1 th, .tabela1 td, .tabela2 th, .tabela2 td {
+        padding: 0.08rem;
+        height: 14px;
+    }
+    
+    .titulo-fisica h3 {
+        font-size: 1rem;
+    }
+    
+    .memoria-fisica {
+        gap: 0.6rem;
+    }
+}
+
+/* Garantir que não haja scroll em nenhum elemento */
+.espaco-fisico,
+.memoria-fisica,
+.tabela1,
+.tabela2,
+.tabela1 table,
+.tabela2 table,
+.tabela1 tbody,
+.tabela2 tbody {
+    overflow: visible !important;
+    max-height: none !important;
+}
+
+/* ============================================= */
+/* UTILITÁRIOS PARA JAVASCRIPT */
+/* ============================================= */
+
+.proc-A, .proc-B, .proc-C, .proc-D, .proc-E {
+    transition: opacity 0.3s ease;
+}
+
+.mem-logica tbody tr, .tabela-de-paginas tbody tr,
+.tabela1 tbody tr, .tabela2 tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+/* Efeito de destaque para mudanças */
+.destaque-alteracao {
+    animation: destaque 1s ease;
+}
+
+@keyframes destaque {
+    0% { background-color: #fff3cd; }
+    100% { background-color: transparent; }
+}
+
+/* Estilo para processos ocultos */
+[hidden] {
+    display: none !important;
+}
