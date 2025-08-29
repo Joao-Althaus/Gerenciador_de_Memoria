@@ -79,10 +79,6 @@ function exibirLista() {
     // Atualiza memória total
     let memoriaUsada = tamanhoProcessos();
     document.getElementById("memoria-utilizada").innerText = memoriaUsada + " KB";
-
-    // Atualiza estatísticas de fragmentação (se implementado)
-    // const fragmentacao = Memoria.calcularFragmentacao();
-    // document.getElementById("fragmentacao").innerText = fragmentacao + "%";
 }
 
 // ======================================
@@ -118,6 +114,8 @@ function exibirMemoria() {
             }
         }
     });
+
+    document.getElementById("frag").innerText = Memoria.calcularFragmentacao() + " KB"; 
 }
 
 // ======================================

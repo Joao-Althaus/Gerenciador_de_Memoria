@@ -5,6 +5,7 @@ import Processo from "./processo.js"
 export default class Memoria{
     static enderecosFisicos = [];
     static lacunas = [];
+    static ultimaPosicao = 0;
 
     constructor(){
         for(let i = 0; i<32; i++){
@@ -25,17 +26,17 @@ export default class Memoria{
     }
 
     // Metodos Utilitarias
-    
-    // calcularFragmentacao() {
-    //     let frag;
+    static calcularFragmentacao() {
+        let maior = 0;
+        
 
-    //     lacunas.array.forEach(element => {
-    //         frag +=element.getTamanho();
-    //     });
+        Memoria.lacunas.forEach(element => {
+            if(element.getTamanho() > maior)
+            maior = element.getTamanho();
+         });
 
-    //     let porcentagem = 100* frag / 32*32 - 32*frag;
-    //     return porcentagem;
-    // }
+         return maior;
+    }
 
     static removerProcesso(processo) {
         // Correção: usar Memoria.enderecosFisicos
@@ -46,6 +47,11 @@ export default class Memoria{
             }
         });
         Memoria.atualizarLacunas();
+
+         // Se a última posição for maior que o número de lacunas, resetar
+        if (Memoria.ultimaPosicao >= Memoria.lacunas.length) {
+            Memoria.ultimaPosicao = 0;
+        }
     }
 
 
@@ -117,9 +123,6 @@ export default class Memoria{
             endereco.setVazio(false);
         }
         
-        // REMOVIDA a linha que seta a base do processo
-        // processo.setBase(inicio);
-        
         Memoria.atualizarLacunas();
         return true;
     }
@@ -142,15 +145,63 @@ export default class Memoria{
         return false;
     }
 
-    //  bestFit(){
+    // Algoritmo Best-Fit
+    static bestFit(processo){
+        Memoria.atualizarLacunas();
+        let menorLacuna = null;
 
-    // }
-
-    //  worstFit(){
-
-    // }
-
-    //  circularFit(){
+        for(const lacuna of Memoria.lacunas){
+            if(lacuna.getTamanho() >= processo.getTamanho()){
+                if(menorLacuna=== null || lacuna.getTamanho() < menorLacuna.getTamanho()){
+                    menorLacuna = lacuna;
+                }
+            }
+        }
+        if(menorLacuna!==null){
+            return Memoria.enderecar(processo, menorLacuna.getInicio());
+        }
+        return false;
+    }
         
-    // }
+        
+    // Algoritmo Worst-Fit
+    static worstFit(processo){
+        Memoria.atualizarLacunas();
+        let maiorLacuna = null;
+
+        for(const lacuna of Memoria.lacunas){
+            if(lacuna.getTamanho() >= processo.getTamanho()){
+                if(maiorLacuna === null || lacuna.getTamanho() > maiorLacuna.getTamanho()){
+                    maiorLacuna = lacuna;
+                }
+            }
+        }
+        if(maiorLacuna!==null){
+            return Memoria.enderecar(processo, maiorLacuna.getInicio());
+        }
+        return false;
+    }
+            
+            
+    // Algoritmo Circular-Fit
+    static circularFit(processo) {
+        Memoria.atualizarLacunas();
+        
+        if (!Memoria.lacunas || Memoria.lacunas.length === 0) return false;
+        if (Memoria.ultimaPosicao >= Memoria.lacunas.length || Memoria.ultimaPosicao < 0) {
+            Memoria.ultimaPosicao = 0;
+        }
+
+        for (let i = 0; i < Memoria.lacunas.length; i++) {
+            const indice = (Memoria.ultimaPosicao + i) % Memoria.lacunas.length;
+            const lacuna = Memoria.lacunas[indice];
+            
+            if (lacuna && lacuna.getTamanho && lacuna.getTamanho() >= processo.getTamanho()) {
+                Memoria.ultimaPosicao = (indice + 1) % Memoria.lacunas.length;
+                return Memoria.enderecar(processo, lacuna.getInicio());
+            }
+        }
+        console.log("Posicao Ponteiro: " + Memoria.ultimaPosicao);
+        return false;
+    }
 }
