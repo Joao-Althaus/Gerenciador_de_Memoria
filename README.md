@@ -60,7 +60,7 @@ O projeto conta com uma página inicial que explica o funcionamento dos algoritm
 ## Como Executar
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/simulador-memoria.git
+   git clone https://github.com/Joao-Althaus/Gerenciador_de_Memoria.git
 2. Abra o projeto no seu editor de preferência (ex.: VS Code).
 
 3. Inicie o Live Server e comece a navegar pelo simulador através das páginas HTML.
