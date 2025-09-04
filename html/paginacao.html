@@ -66,8 +66,6 @@
                             <label for="tamanho-processo">Tamanho (KB)</label>
                             <input type="number" id="tamanho-processo" min="1" max="32" placeholder="1-32 KB">
                         </div>
-
-                       
                         
                         <button class="btn btn-primary" id="btn-adicionar">
                             <i class="fas fa-plus"></i> Adicionar Processo
@@ -116,303 +114,292 @@
                         <h3 >Memória Lógica</h3>
                     </div>
 
-                    <!-- Processo A -->
-                    <div class="proc-A">
-                        <div class="mem-logica">
+                        <div class="proc-Vazio">
+                            <i class="fas fa-info-circle"></i>
+                            <p>Nenhum processo ativo!</p>
+                        </div>
+
+                        <!-- Processo A -->
+                        <div class="proc-A" hidden>
+                            <div class="mem-logica">
+                                
+                                <div class="nome-processo">
+                                    <h4>Processo A</h4>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <td> End.Lógico</td>
+                                        <td> Desloc</td>
+                                        <td> Byte</td>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr><td>000</td> <td>00</td> <td></td></tr>
+                                        <tr><td>000</td> <td>01</td> <td></td></tr>
+                                        <tr><td>000</td> <td>10</td> <td></td></tr>
+                                        <tr><td>000</td> <td>11</td> <td></td></tr>
+                                
+                                        <tr><td>001</td> <td>00</td> <td></td></tr>
+                                        <tr><td>001</td> <td>01</td> <td></td></tr>
+                                        <tr><td>001</td> <td>10</td> <td></td></tr>
+                                        <tr><td>001</td> <td>11</td> <td></td></tr>
+                                
+                                        <tr><td>010</td> <td>00</td> <td></td></tr>
+                                        <tr><td>010</td> <td>01</td> <td></td></tr>
+                                        <tr><td>010</td> <td>10</td> <td></td></tr>
+                                        <tr><td>010</td> <td>11</td> <td></td></tr>
+                                
+                                        <tr><td>011</td> <td>00</td> <td></td></tr>
+                                        <tr><td>011</td> <td>01</td> <td></td></tr>
+                                        <tr><td>011</td> <td>10</td> <td></td></tr>
+                                        <tr><td>011</td> <td>11</td> <td></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="tabela-de-paginas">
+                                <div class="titulo-pagina">
+                                    <h4>Tabela de Páginas</h4>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <td>Página</td>
+                                        <td>Frame</td>
+                                    </thead>
+
+                                    <tr><td>000</td><td>----</td></tr>
+                                    <tr><td>001</td><td>----</td></tr>
+                                    <tr><td>010</td><td>----</td></tr>
+                                    <tr><td>011</td><td>----</td></tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Processo B -->
+                        <div class="proc-B" hidden>
                             
-                            <div class="nome-processo">
-                                <h4>Processo A</h4>
-                            </div>
-                            <table>
-                                <thead>
-                                    <td> End.Lógico</td>
-                                    <td> Desloc</td>
-                                    <td> Byte</td>
-                                </thead>
+                            <div class="mem-logica">
+                                <div class="nome-processo">
+                                    <h4>Processo B</h4>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <td> End.Lógico</td>
+                                        <td> Desloc</td>
+                                        <td> Byte</td>
+                                    </thead>
 
-                                <tbody>
-                                    <tr><td>000</td> <td>00</td> <td>A1</td></tr>
-                                    <tr><td>000</td> <td>01</td> <td>A2</td></tr>
-                                    <tr><td>000</td> <td>10</td> <td>A3</td></tr>
-                                    <tr><td>000</td> <td>11</td> <td>A4</td></tr>
-                               
-                                    <tr><td>001</td> <td>00</td> <td></td></tr>
-                                    <tr><td>001</td> <td>01</td> <td></td></tr>
-                                    <tr><td>001</td> <td>10</td> <td></td></tr>
-                                    <tr><td>001</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>010</td> <td>00</td> <td></td></tr>
-                                    <tr><td>010</td> <td>01</td> <td></td></tr>
-                                    <tr><td>010</td> <td>10</td> <td></td></tr>
-                                    <tr><td>010</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>011</td> <td>00</td> <td></td></tr>
-                                    <tr><td>011</td> <td>01</td> <td></td></tr>
-                                    <tr><td>011</td> <td>10</td> <td></td></tr>
-                                    <tr><td>011</td> <td>11</td> <td></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="tabela-de-paginas">
-                            <div class="titulo-pagina">
-                                <h3>Tabela de Paginas</h3>
-                            </div>
-                            <table>
-                                <thead>
-                                    <td>Página</td>
-                                    <td>Frame</td>
-                                </thead>
-
-                                <tr><td>0000</td><td>0001</td></tr>
-                                <tr><td>0001</td><td>----</td></tr>
-                                <tr><td>0010</td><td>----</td></tr>
-                                <tr><td>0011</td><td>----</td></tr>
-                                <tr><td>0100</td><td>----</td></tr>
-                                <tr><td>0101</td><td>----</td></tr>
-                                <tr><td>0110</td><td>----</td></tr>
-                                <tr><td>0111</td><td>----</td></tr>
+                                    <tbody>
+                                        <tr><td>000</td> <td>00</td> <td>ajksld</td></tr>
+                                        <tr><td>000</td> <td>01</td> <td></td></tr>
+                                        <tr><td>000</td> <td>10</td> <td></td></tr>
+                                        <tr><td>000</td> <td>11</td> <td></td></tr>
                                 
-                            </table>
+                                        <tr><td>001</td> <td>00</td> <td></td></tr>
+                                        <tr><td>001</td> <td>01</td> <td></td></tr>
+                                        <tr><td>001</td> <td>10</td> <td></td></tr>
+                                        <tr><td>001</td> <td>11</td> <td></td></tr>
+                                
+                                        <tr><td>010</td> <td>00</td> <td></td></tr>
+                                        <tr><td>010</td> <td>01</td> <td></td></tr>
+                                        <tr><td>010</td> <td>10</td> <td></td></tr>
+                                        <tr><td>010</td> <td>11</td> <td></td></tr>
+                                
+                                        <tr><td>011</td> <td>00</td> <td></td></tr>
+                                        <tr><td>011</td> <td>01</td> <td></td></tr>
+                                        <tr><td>011</td> <td>10</td> <td></td></tr>
+                                        <tr><td>011</td> <td>11</td> <td></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="tabela-de-paginas">
+                                <div class="titulo-pagina">
+                                    <h4>Tabela de Páginas</h4>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <td>Página</td>
+                                        <td>Frame</td>
+                                    </thead>
+
+                                    <tr><td>000</td><td>----</td></tr>
+                                    <tr><td>001</td><td>----</td></tr>
+                                    <tr><td>010</td><td>----</td></tr>
+                                    <tr><td>011</td><td>----</td></tr>                                    
+                                </table>
+                            </div>
+
                         </div>
+
+                        <!-- Processo C -->
+                        <div class="proc-C" hidden>
+                            <div class="mem-logica">
+                                <div class="nome-processo">
+                                    <h4>Processo C</h4>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <td> End.Lógico</td>
+                                        <td> Desloc</td>
+                                        <td> Byte</td>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr><td>000</td> <td>00</td> <td></td></tr>
+                                        <tr><td>000</td> <td>01</td> <td></td></tr>
+                                        <tr><td>000</td> <td>10</td> <td></td></tr>
+                                        <tr><td>000</td> <td>11</td> <td></td></tr>
+                                
+                                        <tr><td>001</td> <td>00</td> <td></td></tr>
+                                        <tr><td>001</td> <td>01</td> <td></td></tr>
+                                        <tr><td>001</td> <td>10</td> <td></td></tr>
+                                        <tr><td>001</td> <td>11</td> <td></td></tr>
+                                
+                                        <tr><td>010</td> <td>00</td> <td></td></tr>
+                                        <tr><td>010</td> <td>01</td> <td></td></tr>
+                                        <tr><td>010</td> <td>10</td> <td></td></tr>
+                                        <tr><td>010</td> <td>11</td> <td></td></tr>
+                                
+                                        <tr><td>011</td> <td>00</td> <td></td></tr>
+                                        <tr><td>011</td> <td>01</td> <td></td></tr>
+                                        <tr><td>011</td> <td>10</td> <td></td></tr>
+                                        <tr><td>011</td> <td>11</td> <td></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="tabela-de-paginas">
+                                <div class="titulo-pagina">
+                                    <h4>Tabela de Páginas</h4>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <td>Página</td>
+                                        <td>Frame</td>
+                                    </thead>
+
+                                    <tr><td>000</td><td>----</td></tr>
+                                    <tr><td>001</td><td>----</td></tr>
+                                    <tr><td>010</td><td>----</td></tr>
+                                    <tr><td>011</td><td>----</td></tr>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <!-- Processo D -->
+                        <div class="proc-D" hidden>
+                            <div class="mem-logica">
+                                <div class="nome-processo">
+                                    <h4>Processo D</h4>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <td> End.Lógico</td>
+                                        <td> Desloc</td>
+                                        <td> Byte</td>
+                                    </thead>
+                                    
+                                    <tbody>
+                                        <tr><td>000</td> <td>00</td> <td></td></tr>
+                                        <tr><td>000</td> <td>01</td> <td></td></tr>
+                                        <tr><td>000</td> <td>10</td> <td></td></tr>
+                                        <tr><td>000</td> <td>11</td> <td></td></tr>
+                                        
+                                        <tr><td>001</td> <td>00</td> <td></td></tr>
+                                        <tr><td>001</td> <td>01</td> <td></td></tr>
+                                        <tr><td>001</td> <td>10</td> <td></td></tr>
+                                        <tr><td>001</td> <td>11</td> <td></td></tr>
+                                        
+                                        <tr><td>010</td> <td>00</td> <td></td></tr>
+                                        <tr><td>010</td> <td>01</td> <td></td></tr>
+                                        <tr><td>010</td> <td>10</td> <td></td></tr>
+                                        <tr><td>010</td> <td>11</td> <td></td></tr>
+                                        
+                                        <tr><td>011</td> <td>00</td> <td></td></tr>
+                                        <tr><td>011</td> <td>01</td> <td></td></tr>
+                                        <tr><td>011</td> <td>10</td> <td></td></tr>
+                                        <tr><td>011</td> <td>11</td> <td></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="tabela-de-paginas">
+                                <div class="titulo-pagina">
+                                    <h4>Tabela de Páginas</h4>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <td>Página</td>
+                                        <td>Frame</td>
+                                    </thead>
+
+                                    <tr><td>000</td><td>----</td></tr>
+                                    <tr><td>001</td><td>----</td></tr>
+                                    <tr><td>010</td><td>----</td></tr>
+                                    <tr><td>011</td><td>----</td></tr>                                    
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <!-- Processo E -->
+                        <div class="proc-E" hidden>
+                            <div class="mem-logica">
+                                <div class="nome-processo">
+                                    <h4>Processo E</h4>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <td> End.Lógico</td>
+                                        <td> Desloc</td>
+                                        <td> Byte</td>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr><td>000</td> <td>00</td> <td></td></tr>
+                                        <tr><td>000</td> <td>01</td> <td></td></tr>
+                                        <tr><td>000</td> <td>10</td> <td></td></tr>
+                                        <tr><td>000</td> <td>11</td> <td></td></tr>
+                                
+                                        <tr><td>001</td> <td>00</td> <td></td></tr>
+                                        <tr><td>001</td> <td>01</td> <td></td></tr>
+                                        <tr><td>001</td> <td>10</td> <td></td></tr>
+                                        <tr><td>001</td> <td>11</td> <td></td></tr>
+                                
+                                        <tr><td>010</td> <td>00</td> <td></td></tr>
+                                        <tr><td>010</td> <td>01</td> <td></td></tr>
+                                        <tr><td>010</td> <td>10</td> <td></td></tr>
+                                        <tr><td>010</td> <td>11</td> <td></td></tr>
+                                
+                                        <tr><td>011</td> <td>00</td> <td></td></tr>
+                                        <tr><td>011</td> <td>01</td> <td></td></tr>
+                                        <tr><td>011</td> <td>10</td> <td></td></tr>
+                                        <tr><td>011</td> <td>11</td> <td></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="tabela-de-paginas">
+                                <div class="titulo-pagina">
+                                    <h4>Tabela de Páginas</h4>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <td>Página</td>
+                                        <td>Frame</td>
+                                    </thead>
+
+                                    <tr><td>000</td><td>----</td></tr>
+                                    <tr><td>001</td><td>----</td></tr>
+                                    <tr><td>010</td><td>----</td></tr>
+                                    <tr><td>011</td><td>----</td></tr>                                    
+                                </table>
+                            </div>
                     </div>
-
-                    <!-- Processo B -->
-
-                    <div class="proc-B" hidden>
-                        
-                        <div class="mem-logica">
-                            <div class="nome-processo">
-                                <h4>Processo B</h4>
-                            </div>
-                            <table>
-                                <thead>
-                                    <td> End.Lógico</td>
-                                    <td> Desloc</td>
-                                    <td> Byte</td>
-                                </thead>
-
-                                <tbody>
-                                    <tr><td>000</td> <td>00</td> <td>B1</td></tr>
-                                    <tr><td>000</td> <td>01</td> <td>B2</td></tr>
-                                    <tr><td>000</td> <td>10</td> <td>B3</td></tr>
-                                    <tr><td>000</td> <td>11</td> <td>B4</td></tr>
-                               
-                                    <tr><td>001</td> <td>00</td> <td></td></tr>
-                                    <tr><td>001</td> <td>01</td> <td></td></tr>
-                                    <tr><td>001</td> <td>10</td> <td></td></tr>
-                                    <tr><td>001</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>010</td> <td>00</td> <td></td></tr>
-                                    <tr><td>010</td> <td>01</td> <td></td></tr>
-                                    <tr><td>010</td> <td>10</td> <td></td></tr>
-                                    <tr><td>010</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>011</td> <td>00</td> <td></td></tr>
-                                    <tr><td>011</td> <td>01</td> <td></td></tr>
-                                    <tr><td>011</td> <td>10</td> <td></td></tr>
-                                    <tr><td>011</td> <td>11</td> <td></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="tabela-de-paginas">
-                            <table>
-                                <thead>
-                                    <td>Página</td>
-                                    <td>Frame</td>
-                                </thead>
-
-                                <tr><td>0000</td><td>0001</td></tr>
-                                <tr><td>0001</td><td>----</td></tr>
-                                <tr><td>0010</td><td>----</td></tr>
-                                <tr><td>0011</td><td>----</td></tr>
-                                <tr><td>0100</td><td>----</td></tr>
-                                <tr><td>0101</td><td>----</td></tr>
-                                <tr><td>0110</td><td>----</td></tr>
-                                <tr><td>0111</td><td>----</td></tr>
-                                
-                            </table>
-                        </div>
-
-                    </div>
-
-                    <!-- Processo C -->
-                    <div class="proc-C" hidden>
-                        <div class="mem-logica">
-                            <div class="nome-processo">
-                                <h4>Processo C</h4>
-                            </div>
-                            <table>
-                                <thead>
-                                    <td> End.Lógico</td>
-                                    <td> Desloc</td>
-                                    <td> Byte</td>
-                                </thead>
-
-                                <tbody>
-                                    <tr><td>000</td> <td>00</td> <td></td></tr>
-                                    <tr><td>000</td> <td>01</td> <td></td></tr>
-                                    <tr><td>000</td> <td>10</td> <td></td></tr>
-                                    <tr><td>000</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>001</td> <td>00</td> <td></td></tr>
-                                    <tr><td>001</td> <td>01</td> <td></td></tr>
-                                    <tr><td>001</td> <td>10</td> <td></td></tr>
-                                    <tr><td>001</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>010</td> <td>00</td> <td></td></tr>
-                                    <tr><td>010</td> <td>01</td> <td></td></tr>
-                                    <tr><td>010</td> <td>10</td> <td></td></tr>
-                                    <tr><td>010</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>011</td> <td>00</td> <td></td></tr>
-                                    <tr><td>011</td> <td>01</td> <td></td></tr>
-                                    <tr><td>011</td> <td>10</td> <td></td></tr>
-                                    <tr><td>011</td> <td>11</td> <td></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="tabela-de-paginas">
-                            <table>
-                                <thead>
-                                    <td>Página</td>
-                                    <td>Frame</td>
-                                </thead>
-
-                                <tr><td>0000</td><td>----</td></tr>
-                                <tr><td>0001</td><td>----</td></tr>
-                                <tr><td>0010</td><td>----</td></tr>
-                                <tr><td>0011</td><td>----</td></tr>
-                                <tr><td>0100</td><td>----</td></tr>
-                                <tr><td>0101</td><td>----</td></tr>
-                                <tr><td>0110</td><td>----</td></tr>
-                                <tr><td>0111</td><td>----</td></tr>
-                                
-                            </table>
-                        </div>
-
-                    </div>
-
-                    <!-- Processo D -->
-
-                    <div class="proc-D" hidden>
-                        <div class="mem-logica">
-                            <div class="nome-processo">
-                                <h4>Processo D</h4>
-                            </div>
-                            <table>
-                                <thead>
-                                    <td> End.Lógico</td>
-                                    <td> Desloc</td>
-                                    <td> Byte</td>
-                                </thead>
-
-                                <tbody>
-                                    <tr><td>000</td> <td>00</td> <td></td></tr>
-                                    <tr><td>000</td> <td>01</td> <td></td></tr>
-                                    <tr><td>000</td> <td>10</td> <td></td></tr>
-                                    <tr><td>000</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>001</td> <td>00</td> <td></td></tr>
-                                    <tr><td>001</td> <td>01</td> <td></td></tr>
-                                    <tr><td>001</td> <td>10</td> <td></td></tr>
-                                    <tr><td>001</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>010</td> <td>00</td> <td></td></tr>
-                                    <tr><td>010</td> <td>01</td> <td></td></tr>
-                                    <tr><td>010</td> <td>10</td> <td></td></tr>
-                                    <tr><td>010</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>011</td> <td>00</td> <td></td></tr>
-                                    <tr><td>011</td> <td>01</td> <td></td></tr>
-                                    <tr><td>011</td> <td>10</td> <td></td></tr>
-                                    <tr><td>011</td> <td>11</td> <td></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="tabela-de-paginas">
-                            <table>
-                                <thead>
-                                    <td>Página</td>
-                                    <td>Frame</td>
-                                </thead>
-
-                                <tr><td>0000</td><td>----</td></tr>
-                                <tr><td>0001</td><td>----</td></tr>
-                                <tr><td>0010</td><td>----</td></tr>
-                                <tr><td>0011</td><td>----</td></tr>
-                                <tr><td>0100</td><td>----</td></tr>
-                                <tr><td>0101</td><td>----</td></tr>
-                                <tr><td>0110</td><td>----</td></tr>
-                                <tr><td>0111</td><td>----</td></tr>
-                                
-                            </table>
-                        </div>
-
-                    </div>
-
-                    <!-- Processo E -->
-                     <div class="proc-E" hidden>
-                         <div class="mem-logica">
-                            <div class="nome-processo">
-                                <h4>Processo E</h4>
-                            </div>
-                            <table>
-                                <thead>
-                                    <td> End.Lógico</td>
-                                    <td> Desloc</td>
-                                    <td> Byte</td>
-                                </thead>
-
-                                <tbody>
-                                    <tr><td>000</td> <td>00</td> <td></td></tr>
-                                    <tr><td>000</td> <td>01</td> <td></td></tr>
-                                    <tr><td>000</td> <td>10</td> <td></td></tr>
-                                    <tr><td>000</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>001</td> <td>00</td> <td></td></tr>
-                                    <tr><td>001</td> <td>01</td> <td></td></tr>
-                                    <tr><td>001</td> <td>10</td> <td></td></tr>
-                                    <tr><td>001</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>010</td> <td>00</td> <td></td></tr>
-                                    <tr><td>010</td> <td>01</td> <td></td></tr>
-                                    <tr><td>010</td> <td>10</td> <td></td></tr>
-                                    <tr><td>010</td> <td>11</td> <td></td></tr>
-                               
-                                    <tr><td>011</td> <td>00</td> <td></td></tr>
-                                    <tr><td>011</td> <td>01</td> <td></td></tr>
-                                    <tr><td>011</td> <td>10</td> <td></td></tr>
-                                    <tr><td>011</td> <td>11</td> <td></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="tabela-de-paginas">
-                            <table>
-                                <thead>
-                                    <td>Página</td>
-                                    <td>Frame</td>
-                                </thead>
-
-                                <tr><td>0000</td><td>----</td></tr>
-                                <tr><td>0001</td><td>----</td></tr>
-                                <tr><td>0010</td><td>----</td></tr>
-                                <tr><td>0011</td><td>----</td></tr>
-                                <tr><td>0100</td><td>----</td></tr>
-                                <tr><td>0101</td><td>----</td></tr>
-                                <tr><td>0110</td><td>----</td></tr>
-                                <tr><td>0111</td><td>----</td></tr>
-                                
-                            </table>
-                        </div>
-
-                     </div>
-
                 </div>
+
 
                  <!-- Memoria Fisica -->
                 <div class="espaco-fisico">
@@ -431,45 +418,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td>0000</td> <td>00</td> <td>B1</td></tr>
-                                <tr><td>0000</td> <td>01</td> <td>B2</td></tr>
-                                <tr><td>0000</td> <td>10</td> <td>B3</td></tr>
-                                <tr><td>0000</td> <td>11</td> <td>B4</td></tr>
+                                <tr><td>000</td> <td>00</td> <td></td></tr>
+                                <tr><td>000</td> <td>01</td> <td></td></tr>
+                                <tr><td>000</td> <td>10</td> <td></td></tr>
+                                <tr><td>000</td> <td>11</td> <td></td></tr>
 
-                                <tr><td>0001</td> <td>00</td> <td>A1</td></tr>
-                                <tr><td>0001</td> <td>01</td> <td>A2</td></tr>
-                                <tr><td>0001</td> <td>10</td> <td>A3</td></tr>
-                                <tr><td>0001</td> <td>11</td> <td>A4</td></tr>
+                                <tr><td>001</td> <td>00</td> <td></td></tr>
+                                <tr><td>001</td> <td>01</td> <td></td></tr>
+                                <tr><td>001</td> <td>10</td> <td></td></tr>
+                                <tr><td>001</td> <td>11</td> <td></td></tr>
 
-                                <tr><td>0010</td> <td>00</td> <td></td></tr>
-                                <tr><td>0010</td> <td>01</td> <td></td></tr>
-                                <tr><td>0010</td> <td>10</td> <td></td></tr>
-                                <tr><td>0010</td> <td>11</td> <td></td></tr>
+                                <tr><td>010</td> <td>00</td> <td></td></tr>
+                                <tr><td>010</td> <td>01</td> <td></td></tr>
+                                <tr><td>010</td> <td>10</td> <td></td></tr>
+                                <tr><td>010</td> <td>11</td> <td></td></tr>
 
-                                <tr><td>0011</td> <td>00</td> <td></td></tr>
-                                <tr><td>0011</td> <td>01</td>  <td></td></tr>
-                                <tr><td>0011</td> <td>10</td> <td></td></tr>
-                                <tr><td>0011</td> <td>11</td> <td></td></tr>
+                                <tr><td>011</td> <td>00</td> <td></td></tr>
+                                <tr><td>011</td> <td>01</td> <td></td></tr>
+                                <tr><td>011</td> <td>10</td> <td></td></tr>
+                                <tr><td>011</td> <td>11</td> <td></td></tr>
 
-                                <tr><td>0100</td><td>00</td><td></td></tr>
-                                <tr><td>0100</td><td>01</td><td></td></tr>
-                                <tr><td>0100</td><td>10</td><td></td></tr>
-                                <tr><td>0100</td><td>11</td><td></td></tr>
-
-                                <tr><td>0101</td><td>00</td><td></td></tr>
-                                <tr><td>0101</td><td>01</td><td></td></tr>
-                                <tr><td>0101</td><td>10</td><td></td></tr>
-                                <tr><td>0101</td><td>11</td><td></td></tr>
-
-                                <tr><td>0110</td><td>00</td><td></td></tr>
-                                <tr><td>0110</td><td>01</td><td></td></tr>
-                                <tr><td>0110</td><td>10</td><td></td></tr>
-                                <tr><td>0110</td><td>11</td><td></td></tr>
-
-                                <tr><td>0111</td><td>00</td><td></td></tr>
-                                <tr><td>0111</td><td>01</td><td></td></tr>
-                                <tr><td>0111</td><td>10</td><td></td></tr>
-                                <tr><td>0111</td><td>11</td><td></td></tr>
                             </tbody>
                         </table>
                         
@@ -483,52 +451,34 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td>1000</td><td>00</td><td></td></tr>
-                                <tr><td>1000</td><td>01</td><td></td></tr>
-                                <tr><td>1000</td><td>10</td><td></td></tr>
-                                <tr><td>1000</td><td>11</td><td></td></tr>
-
-                                <tr><td>1001</td><td>00</td><td></td></tr>
-                                <tr><td>1001</td><td>01</td><td></td></tr>
-                                <tr><td>1001</td><td>10</td><td></td></tr>
-                                <tr><td>1001</td><td>11</td><td></td></tr>
-
-                                <tr><td>1010</td><td>00</td><td></td></tr>
-                                <tr><td>1010</td><td>01</td><td></td></tr>
-                                <tr><td>1010</td><td>10</td><td></td></tr>
-                                <tr><td>1010</td><td>11</td><td></td></tr>
-
-                                <tr><td>1011</td><td>00</td><td></td></tr>
-                                <tr><td>1011</td><td>01</td><td></td></tr>
-                                <tr><td>1011</td><td>10</td><td></td></tr>
-                                <tr><td>1011</td><td>11</td><td></td></tr>
-
-                                <tr><td>1100</td><td>00</td><td></td></tr>
-                                <tr><td>1100</td><td>01</td><td></td></tr>
-                                <tr><td>1100</td><td>10</td><td></td></tr>
-                                <tr><td>1100</td><td>11</td><td></td></tr>
-
-                                <tr><td>1101</td><td>00</td><td></td></tr>
-                                <tr><td>1101</td><td>01</td><td></td></tr>
-                                <tr><td>1101</td><td>10</td><td></td></tr>
-                                <tr><td>1101</td><td>11</td><td></td></tr>
-
-                                <tr><td>1110</td><td>00</td><td></td></tr>
-                                <tr><td>1110</td><td>01</td><td></td></tr>
-                                <tr><td>1110</td><td>10</td><td></td></tr>
-                                <tr><td>1110</td><td>11</td><td></td></tr>
-
-                                <tr><td>1111</td><td>00</td><td></td></tr>
-                                <tr><td>1111</td><td>01</td><td></td></tr>
-                                <tr><td>1111</td><td>10</td><td></td></tr>
-                                <tr><td>1111</td><td>11</td><td></td></tr>
+                                <tr><td>100</td><td>00</td><td></td></tr>
+                                <tr><td>100</td><td>01</td><td></td></tr>
+                                <tr><td>100</td><td>10</td><td></td></tr>
+                                <tr><td>100</td><td>11</td><td></td></tr>
+        
+                                <tr><td>101</td><td>00</td><td></td></tr>
+                                <tr><td>101</td><td>01</td><td></td></tr>
+                                <tr><td>101</td><td>10</td><td></td></tr>
+                                <tr><td>101</td><td>11</td><td></td></tr>
+        
+                                <tr><td>110</td><td>00</td><td></td></tr>
+                                <tr><td>110</td><td>01</td><td></td></tr>
+                                <tr><td>110</td><td>10</td><td></td></tr>
+                                <tr><td>110</td><td>11</td><td></td></tr>
+        
+                                <tr><td>111</td><td>00</td><td></td></tr>
+                                <tr><td>111</td><td>01</td><td></td></tr>
+                                <tr><td>111</td><td>10</td><td></td></tr>
+                                <tr><td>111</td><td>11</td><td></td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                            
-            
+            </div>              
         </div>
     </div>
+
+    <script type="module" src="../javascript/Paginacao/controller/paginacaoController.js"></script>
+
 </body>
 </html>

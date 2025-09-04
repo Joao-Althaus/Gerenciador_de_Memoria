@@ -208,7 +208,7 @@ h1 {
     padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -230,7 +230,9 @@ h1 {
     overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
+.card-processos{
+    margin-top: 1rem;
+}
 .card-processo:hover,
 .card-processos:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
@@ -370,7 +372,7 @@ h1 {
 /* ============================================= */
 
 .lista-processos {
-    max-height: 230px;
+    max-height: 280px;
     overflow-y: auto;
     margin-bottom: 1rem;
     scrollbar-width: thin;
@@ -442,7 +444,7 @@ h1 {
 /* ============================================= */
 
 #lista-processos {
-    max-height: 230px;
+    max-height: 280px;
     overflow-y: auto;
     margin-bottom: 1rem;
     scrollbar-width: thin;
@@ -467,7 +469,7 @@ h1 {
 /* Item de processo - estilo específico para os gerados pelo JS */
 .processo-item {
     display: grid;
-    grid-template-columns: 30px 45px 80px 20px; 
+    grid-template-columns: 60px 60px 60px; 
     gap: 1rem;
     align-items: center;
     padding: 0.8rem 1rem;
@@ -526,6 +528,30 @@ h1 {
 
 .processo-item button.btn-remover i {
     font-size: 0.9rem;
+}
+
+.btn-exibir-processo {
+    background-color: #fff;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+}
+
+.btn-exibir-processo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.35);
+}
+
+.btn-exibir-processo:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.2);
 }
 
 /* ============================================= */
@@ -682,6 +708,23 @@ h1 {
     font-weight: 600;
 }
 
+ /* Processo-Vazio */
+
+ .proc-Vazio{
+    padding: 4rem;
+    font-size: 2rem;
+    color: #d1d5db;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ }
+ .proc-Vazio p{
+    font-size: 1.1rem;
+    margin-top: 5px;
+    color: #34495e;
+    
+ }
+
 /* Container de cada processo */
 .proc-A, .proc-B, .proc-C, .proc-D, .proc-E {
     display: flex;
@@ -693,11 +736,23 @@ h1 {
     text-align: center;
     padding: 0.5rem;
     background-color: #f8f9fa;
-    border-radius: 4px;
-    
+    border-radius: 4px;  
 }
 
 .nome-processo h4 {
+    color: #2c3e50;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.titulo-pagina{
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;  
+}
+.titulo-pagina h4 {
     color: #2c3e50;
     margin: 0;
     font-size: 1.1rem;
@@ -747,8 +802,20 @@ h1 {
     color: white;
 }
 
-.mem-logica tbody tr:nth-child(even) {
-    background-color: #f1f3f5;
+/* 4 linhas claras */
+.mem-logica tbody tr:nth-child(8n+1),
+.mem-logica tbody tr:nth-child(8n+2),
+.mem-logica tbody tr:nth-child(8n+3),
+.mem-logica tbody tr:nth-child(8n+4) {
+    background-color: #ffffff; /* cor clara */
+}
+
+/* 4 linhas escuras */
+.mem-logica tbody tr:nth-child(8n+5),
+.mem-logica tbody tr:nth-child(8n+6),
+.mem-logica tbody tr:nth-child(8n+7),
+.mem-logica tbody tr:nth-child(8n+8) {
+    background-color: #f1f3f5; /* cor escura */
 }
 
 .mem-logica tbody tr:hover {
@@ -873,9 +940,9 @@ h1 {
     color: white;
 }
 
-.tabela-de-paginas tbody tr:nth-child(even) {
+/* .tabela-de-paginas tbody tr:nth-child(even) {
     background-color: #f1f3f5;
-}
+} */
 
 .tabela-de-paginas tbody tr:hover {
     background-color: #fadbd8;
@@ -1045,9 +1112,30 @@ h1 {
     color: white;
 }
 
-.tabela1 tbody tr:nth-child(even), .tabela2 tbody tr:nth-child(even) {
-    background-color: #f1f3f5;
+/* 4 linhas claras */
+.tabela1 tbody tr:nth-child(8n+1),
+.tabela1 tbody tr:nth-child(8n+2),
+.tabela1 tbody tr:nth-child(8n+3),
+.tabela1 tbody tr:nth-child(8n+4),
+.tabela2 tbody tr:nth-child(8n+1),
+.tabela2 tbody tr:nth-child(8n+2),
+.tabela2 tbody tr:nth-child(8n+3),
+.tabela2 tbody tr:nth-child(8n+4) {
+    background-color: #ffffff; /* cor clara */
 }
+
+/* 4 linhas escuras */
+.tabela1 tbody tr:nth-child(8n+5),
+.tabela1 tbody tr:nth-child(8n+6),
+.tabela1 tbody tr:nth-child(8n+7),
+.tabela1 tbody tr:nth-child(8n+8),
+.tabela2 tbody tr:nth-child(8n+5),
+.tabela2 tbody tr:nth-child(8n+6),
+.tabela2 tbody tr:nth-child(8n+7),
+.tabela2 tbody tr:nth-child(8n+8) {
+    background-color: #f1f3f5; /* cor escura */
+}
+
 
 .tabela1 tbody tr:hover, .tabela2 tbody tr:hover {
     background-color: #e8f4fc;

@@ -65,4 +65,3 @@ O projeto conta com uma página inicial que explica o funcionamento dos algoritm
 
 3. Inicie o Live Server e comece a navegar pelo simulador através das páginas HTML.
 
-4. Alternativamente, é possível abrir o arquivo index.html diretamente no navegador.
