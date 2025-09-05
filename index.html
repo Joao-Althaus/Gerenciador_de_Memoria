@@ -36,13 +36,100 @@
             </div>
            
         </div>
-    
-        <div class="conteudo">
-             <h1>Simulador de Gerenciamento de Memória</h1>
-                <p>Resumo dos algoritmos pra ficar bonitnho e de como usar o simulador :D</p>
 
+    <div class="conteudo">
+        <div class="content-wrapper">
+            <!-- Título principal -->
+            <header class="titulo">
+                <h1>Simulador de Gerenciamento de Memória</h1>
+                <p class="subtitulo">Uma ferramenta didática para estudo de estratégias de alocação e paginação</p>
+            </header>
 
+            <!-- Autores -->
+            <section class="autores card">
+                <h2>Autores</h2>
+                <p><strong>João Vitor Althaus Godoi</strong> – Matrícula: 204929</p>
+                <p><strong>Rafael Maurina</strong> – Matrícula: 205380</p>
+            </section>
 
+            <!-- Sobre o projeto -->
+            <section class="sobre card">
+                <h2>Sobre o Projeto</h2>
+                <p>
+                    Este simulador foi desenvolvido com o objetivo de demonstrar, de forma didática, 
+                    os principais conceitos de <strong>gerenciamento de memória em sistemas operacionais</strong>.
+                </p>
+                <p>
+                    O sistema permite visualizar e executar diferentes estratégias de alocação, 
+                    auxiliando na compreensão prática de como esses algoritmos funcionam e quais os impactos de cada escolha.
+                </p>
+                <div class="info-box">
+                    💻 Projeto desenvolvido para a disciplina de <strong>Sistemas Operacionais 2</strong> – 
+                    <strong>Ciência da Computação</strong>, 
+                    <strong>Universidade de Passo Fundo (UPF)</strong>, 2025.
+                </div>
+            </section>
+
+            <!-- Modo Contíguo -->
+            <section class="contiguo card">
+                <h2>Modo Contíguo</h2>
+                <p>
+                    Neste modo, os processos são armazenados em áreas contíguas da memória, 
+                    o que pode gerar <strong>fragmentação externa</strong>. 
+                    É útil para compreender os desafios de alocar blocos grandes de memória contínua.
+                </p>
+
+                <h3>Algoritmos Implementados</h3>
+                <ul>
+                    <li><strong>First-Fit:</strong> aloca na primeira lacuna que encontrar com tamanho suficiente.</li>
+                    <li><strong>Best-Fit:</strong> aloca na lacuna que resultar a menor sobra.</li>
+                    <li><strong>Worst-Fit:</strong> aloca na lacuna que resultar a menor sobra.</li>
+                    <li><strong>Circular-Fit (Next-Fit):</strong> igual o first-fit, mas inicia a procura na lacuna seguinte à última sobra.</li>
+                </ul>
+
+                <h3>Funcionalidades</h3>
+                <ul>
+                    <li>Visualização interativa em uma memória de 32 KB.</li>
+                    <li>Diferenciação por cores entre espaços livres e alocados.</li>
+                    <li>Estatísticas como fragmentação externa e uso da memória.</li>
+                    <li>Gerenciamento: remoção individual ou limpeza total.</li>
+                </ul>
+            </section>
+
+            <!-- Modo Paginação -->
+            <section class="paginacao card">
+                <h2>Modo Paginação</h2>
+                <p>
+                    O modo de paginação divide a memória em blocos fixos de mesmo tamanho, 
+                    eliminando a fragmentação externa e permitindo que cada processo tenha 
+                    seu próprio <strong>espaço lógico</strong> organizado em páginas.
+                </p>
+
+                <h3>Características do Simulador</h3>
+                <ul>
+                    <li>Memória Física: 32 KB → 8 frames de 4 KB.</li>
+                    <li>Páginas Lógicas: 4 KB cada.</li>
+                    <li>Até 5 processos simultâneos, máximo de 16 KB por processo.</li>
+                    <li>Tabela de páginas individual por processo.</li>
+                </ul>
+
+                <h3>Conceitos Importantes</h3> 
+                <ul>
+                    <li><strong>Endereço Lógico:</strong> composto por um número de página + deslocamento, indica a posição de um dado no espaço de memória virtual do processo.</li>
+                    <li><strong>Endereço Físico:</strong> composto por um quadro (frame) + deslocamento, indica a posição real do dado na memória física.</li>
+                    <li><strong>Página (page):</strong> bloco de memória lógica de tamanho fixo que divide o espaço de endereçamento virtual de um processo.</li>
+                    <li><strong>Quadro (frame):</strong> bloco de memória física de mesmo tamanho da página, onde os dados da página são efetivamente armazenados.</li>
+                    <li><strong>Deslocamento:</strong> posição de um byte dentro de uma página ou quadro, usada para localizar dados específicos.</li>
+                    <li><strong>Tabela de Páginas:</strong> estrutura que mantém o mapeamento entre páginas virtuais e frames físicos, permitindo a tradução de endereços.</li>
+                    <li>Simulação da tradução de endereços virtuais para físicos em tempo real, mostrando como a memória lógica é mapeada para a memória física.</li>
+                </ul>   
+
+                
+                <div class="info-box">
+                    💡 A tabela de páginas neste simulador funciona de forma semelhante a uma 
+                    <strong>TLB</strong> em sistemas reais, agilizando a tradução de endereços.
+                </div>
+            </section>
         </div>
     </div>
 </body>
