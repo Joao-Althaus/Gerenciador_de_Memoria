@@ -14,13 +14,12 @@ html, body {
 /* Container Principal */
 .container {
     display: flex;
-    min-height: 100vh;
     background-color: #f8f9fa;
 }
 
 /* Menu Lateral */
 .menu {
-    width: 250px;
+    width: 300px;
     background-color: #2c3e50;
     color: white;
     display: flex;
@@ -29,13 +28,14 @@ html, body {
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     position: fixed;
     height: 100vh;
+    left: 0;
+    top: 0;
 }
 
 .logoUPF {
     display: flex;
     justify-content: center;
     padding: 0 20px 20px;
-   
 }
 
 .logoUPF img {
@@ -84,18 +84,18 @@ html, body {
     margin-top: auto;
 }
 
-/* Conteúdo Principal */
+/* Conteúdo Principal – AJUSTADO */
 .conteudo {
-    flex: 1;
-    margin-left: 250px; /* Igual à largura do menu */
-    padding: 30px;
-    background-color: #f1f3f5;
-    min-height: 100vh;
+    margin-left: 300px;              /* empurra o conteúdo para o lado do menu */
+    padding: 2rem;
+    width: calc(100% - 300px);       /* ocupa o restante da tela */
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .content-wrapper {
-    /* max-width: 75%; */
-    margin: 0 auto;
+    margin: 0;
     background-color: white;
     padding: 30px;
     border-radius: 8px;
@@ -139,35 +139,28 @@ h1 {
     line-height: 1.5;
 }
 
-/* Responsividade */
+/* Responsividade – AJUSTADA */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
     }
-    
+
     .menu {
         width: 100%;
         position: relative;
         height: auto;
     }
-    
+
     .conteudo {
         margin-left: 0;
+        width: 100%;
         padding: 20px;
     }
-    
+
     .content-wrapper {
         padding: 20px;
+        margin-right: 0;
     }
-}
-
-/* Cards */
-.card {
-    background: white;
-    border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
 
 /* Subtítulo */
@@ -195,9 +188,7 @@ h3 {
     font-size: 1.1rem;
 }
 
-
-
-/* Estilos para Listas - Mantendo a identidade visual do projeto */
+/* Estilos para Listas */
 ul {
     list-style: none;
     margin: 15px 0;
@@ -228,51 +219,40 @@ li strong {
     font-weight: 600;
 }
 
-/* Efeito hover suave */
-li:hover {
-    background-color: #f8f9fa;
-    border-radius: 4px;
-    padding-left: 30px;
-    transition: all 0.2s ease;
-}
-
-/* Espaçamento entre itens da lista */
 ul + h3 {
     margin-top: 25px;
 }
 
-
-/* Responsividade para listas */
 @media (max-width: 768px) {
     li {
         padding: 10px 0 10px 25px;
         margin-bottom: 10px;
     }
-    
+
     li:hover {
         padding-left: 30px;
     }
 }
 
-
-/* Efeito de hover para todos os tipos de card */
-.card,
-.contiguo.card,
-.paginacao.card {
-    background: white;
-    border-radius: 8px;
-    padding: 25px;
+/* Seções de texto corrido */
+.autores,
+.sobre,
+.contiguo,
+.paginacao {
+    padding-top: 25px;
+    padding-bottom: 25px;
     margin-bottom: 25px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    cursor: pointer;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    cursor: default;
 }
 
-.card:hover,
-.contiguo.card:hover,
-.paginacao.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    border-left: 4px solid #3498db;
+.content-wrapper > section:first-of-type {
+    padding-top: 0;
 }
 
+.content-wrapper > section:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}

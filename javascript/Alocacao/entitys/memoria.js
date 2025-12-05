@@ -1,5 +1,5 @@
 import Endereco from "./endereco.js";
-import Lacuna from "./lacuna.js";
+import Lacuna from "./Lacuna.js";
 import Processo from "./processo.js"
 
 export default class Memoria{
